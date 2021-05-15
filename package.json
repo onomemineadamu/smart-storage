@@ -1,0 +1,8 @@
+{
+  "name": "smart-storage",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/onomemineadamu/smart-storage",
+  "author": "creativeDevelopals",
+  "license": "MIT"
+}
