@@ -1,26 +1,32 @@
-export const checkMemory => () => {}
+export const checkMemory = () => { }
 
-
-function Memory(){
-    if(!new.target){
+function Memory(this: any) {
+    if (!new.target) {
         return arguments.callee()
     }
 
-    setItem(key:string,value:any){
-        //storyewith memo consideration. Note every storage goes to smartStorageMemory ref key
+    this.smartStorageMemory = {}
+
+
+    this.setItem = function (key: string, value: any) {
+        if (this.smartStorageMemory[key] !== value) {
+            this.smartStorageMemory[key] = value
+        }
+        return;
     }
 
-    getItem(key:string){
-        //get operation
+    this.getItem = function (key: string) {
+        return this.smartStorageMemory[key]
     }
 
-    removeItem(key:string){
-        //remove operation
+    this.removeItem = function (key: string) {
+        delete this.smartStorageMemory[key]
     }
 
-    clear(){
-        //delete smartStorageMemory that holds all other data as a key
+    this.clear = function () {
+        delete this.smartStorageMemory;
+
     }
 }
 
-export memory = Memory();
+export const memory = Memory();
