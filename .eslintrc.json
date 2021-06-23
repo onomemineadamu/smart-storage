@@ -3,14 +3,24 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["plugin:react/recommended", "airbnb"],
+  "extends": ["airbnb-base"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint"]
+  "plugins": ["@typescript-eslint"],
+
+  "rules": {
+    "semi": ["error", "always"],
+    "quotes": ["error", "double"],
+    "max-len": ["error", { "code": 150, "tabWidth": 2 }],
+    "linebreak-style": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "import/prefer-default-export": "off",
+    "no-console": "off",
+    "func-names": "off",
+    "consistent-return": "off"
+  }
 }

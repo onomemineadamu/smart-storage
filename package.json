@@ -8,7 +8,16 @@
   "scripts": {
     "build": "tsc -b .",
     "build:watch": "tsc --watch",
-    "clean": "rimraf dist"
+    "test": "npm run test",
+    "clean": "rimraf dist",
+    "n:lint": "npx eslint . --ext .ts --ext .js",
+    "y:lint": "yarn run eslint . --ext .ts --ext .js",
+    "n:prettier": "npx prettier --write .",
+    "y:prettier": "yarn prettier --write .",
+    "n:lint:fix": "npx eslint . --fix --ext .ts --ext .js",
+    "y:lint:fix": "yarn run eslint . --fix --ext .ts --ext .js",
+    "local:ci": "npm run test --watchAll=false",
+    "prepare": "husky install"
   },
   "volta": {
     "node": "14.17.0",
@@ -17,10 +26,15 @@
   "devDependencies": {
     "@types/jest": "^26.0.23",
     "@types/node": "^15.3.0",
-    "@typescript-eslint/eslint-plugin": "^4.23.0",
-    "@typescript-eslint/parser": "^4.23.0",
-    "eslint": "^7.26.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "eslint": "^7.29.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "husky": "^6.0.0",
     "jest": "^26.6.3",
+    "prettier": "2.3.1",
     "rimraf": "^3.0.2",
     "ts-jest": "^26.5.6",
     "ts-node": "^9.1.1",

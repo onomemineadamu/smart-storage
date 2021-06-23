@@ -2,6 +2,7 @@
 /dist/
 /docs/
 .ideal/*
+/trash/
 
 .DS_Store
 coverage
