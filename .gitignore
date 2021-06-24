@@ -1,8 +1,10 @@
 /node_modules/
 /dist/
-/docs/
-.ideal/*
+/build/
+/coverage/
 /trash/
+.ideal/*
+
 
 .DS_Store
 coverage
